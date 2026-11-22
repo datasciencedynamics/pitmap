@@ -3,4 +3,4 @@
 from pitmap.core.interpolation import NearestRegion, SectorIDW
 
 __all__ = ["NearestRegion", "SectorIDW"]
-__version__ = "0.0.0a1"
+__version__ = "0.0.0a2"
