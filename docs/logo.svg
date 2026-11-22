@@ -41,7 +41,7 @@
 
   <!-- wordmark -->
   <!-- both lines forced to the same rendered width so they align regardless of font -->
-  <text x="200" y="98" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#0057B7" textLength="92" lengthAdjust="spacingAndGlyphs">pit</text>
-  <text x="292" y="98" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#FFD500" stroke="#0057B7" stroke-width="1.8" stroke-linejoin="round" paint-order="stroke fill" textLength="148" lengthAdjust="spacingAndGlyphs">map</text>
+  <text x="200" y="98" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#0057B7" stroke="#FFD500" stroke-width="2.2" stroke-linejoin="round" paint-order="stroke fill" textLength="92" lengthAdjust="spacingAndGlyphs">pit</text>
+  <text x="292" y="98" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#FFD500" stroke="#0057B7" stroke-width="3.4" stroke-linejoin="round" paint-order="stroke fill" textLength="148" lengthAdjust="spacingAndGlyphs">map</text>
   <text x="200" y="136" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" fill="#0057B7" textLength="240" lengthAdjust="spacing">SURFACES FROM SURVEY POINTS</text>
 </svg>
