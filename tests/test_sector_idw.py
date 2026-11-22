@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from pitsurf import SectorIDW
+from pitmap import SectorIDW
 
 
 def test_exact_at_training_points():

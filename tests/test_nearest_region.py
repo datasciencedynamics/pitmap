@@ -1,6 +1,6 @@
 import numpy as np
 
-from pitsurf import NearestRegion
+from pitmap import NearestRegion
 
 
 def test_nearest_region_reproduces_training_points():

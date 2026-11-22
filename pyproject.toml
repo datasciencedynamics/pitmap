@@ -3,18 +3,18 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pitsurf"
+name = "pitmap"
 version = "0.0.0a1"
-description = "Surface construction from scattered survey points: polygonal (nearest-region), B-spline, NURBS, and SVR interpolators for open-pit mine surveying."
+description = "Surface construction from scattered survey points for open-pit mine surveying: polygonal, sector IDW, polynomial, NURBS and kernel interpolators, with prism volumes."
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{name = "Leonid Shpaner"}]
 keywords = ["mine surveying", "interpolation", "open-pit", "NURBS", "IDW", "surface modeling"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering",
 ]
@@ -24,8 +24,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lshpaner/pitsurf"
-Repository = "https://github.com/lshpaner/pitsurf"
+Homepage = "https://github.com/lshpaner/pitmap"
+Repository = "https://github.com/lshpaner/pitmap"
 
 [project.optional-dependencies]
 kernel = ["scikit-learn>=1.3"]
@@ -35,7 +35,7 @@ viz = ["matplotlib>=3.7"]
 dev = ["pytest", "black", "nbstripout", "jupyter", "build", "twine"]
 
 [tool.setuptools.packages.find]
-include = ["pitsurf*"]
+include = ["pitmap*"]
 
 [tool.black]
 line-length = 88

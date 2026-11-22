@@ -1,12 +1,12 @@
-<img src="https://raw.githubusercontent.com/lshpaner/pitsurf/main/docs/logo.svg" width="520" alt="pitsurf">
+<img src="https://raw.githubusercontent.com/lshpaner/pitmap/main/docs/logo.svg" width="520" alt="pitmap">
 
-[![PyPI](https://img.shields.io/pypi/v/pitsurf.svg)](https://pypi.org/project/pitsurf/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lshpaner/pitsurf/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/pitmap.svg)](https://pypi.org/project/pitmap/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lshpaner/pitmap/blob/main/LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 
 Surface construction from scattered survey points for open-pit mine surveying.
 
-`pitsurf` is a Python implementation of the surface-modeling methods used in
+`pitmap` is a Python implementation of the surface-modeling methods used in
 the automated geological and mine-surveying support system developed at the
 State University of Economics and Technology (Kryvyi Rih, Ukraine), with a
 kernel-based interpolator added for comparison. All methods share one
@@ -34,14 +34,14 @@ Implemented so far: `NearestRegion`, `SectorIDW`.
 ## Install
 
 ```bash
-pip install pitsurf
+pip install pitmap
 ```
 
 ## Usage
 
 ```python
 import numpy as np
-from pitsurf import NearestRegion
+from pitmap import NearestRegion
 
 xy = np.array([[0.0, 0.0], [10.0, 0.0], [0.0, 10.0], [10.0, 10.0]])
 z = np.array([100.0, 102.0, 101.0, 103.0])
@@ -54,7 +54,7 @@ model.predict(np.array([[2.0, 1.0], [9.0, 9.0]]))
 ## Repository layout
 
 ```
-pitsurf/          package; core/ holds the interpolators
+pitmap/          package; core/ holds the interpolators
 data_gen.py          fetch a raw DEM tile -> data/raw (Parquet, optional CSV)
 preprocessing.py     subsample to sparse survey points -> data/processed
 notebooks/           analysis; outputs stripped before commit
@@ -65,7 +65,7 @@ data/                gitignored
 
 ```bash
 conda activate conda_312
-make create_venv && source venv_pit/bin/activate
+make create_venv && source venv_pitmap/bin/activate
 make requirements
 make test
 make help            # list all targets

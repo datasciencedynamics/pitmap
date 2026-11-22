@@ -2,10 +2,10 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = pitsurf
+PROJECT_NAME = pitmap
 PYTHON_VERSION = 3.12
 PYTHON_INTERPRETER = python
-VENV_DIR = venv_pit
+VENV_DIR = venv_pitmap
 DATA_DIR = data
 
 #################################################################################
@@ -44,7 +44,7 @@ test:
 
 ## Format with black
 format:
-	$(PYTHON_INTERPRETER) -m black pitsurf tests *.py
+	$(PYTHON_INTERPRETER) -m black pitmap tests *.py
 
 ## Strip notebook outputs before committing
 strip_notebooks:
