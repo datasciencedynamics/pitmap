@@ -9,4 +9,3 @@ build/
 dist/
 .pytest_cache/
 .ipynb_checkpoints/
-docs/_build/
