@@ -24,8 +24,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lshpaner/pitmap"
-Repository = "https://github.com/lshpaner/pitmap"
+Homepage = "https://github.com/datasciencedynamics/pitmap"
+Repository = "https://github.com/datasciencedynamics/pitmap"
 
 [project.optional-dependencies]
 kernel = ["scikit-learn>=1.3"]

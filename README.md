@@ -1,7 +1,7 @@
-<img src="https://raw.githubusercontent.com/lshpaner/pitmap/main/docs/logo.svg" width="520" alt="pitmap">
+<img src="https://raw.githubusercontent.com/datasciencedynamics/pitmap/main/docs/logo.svg" width="520" alt="pitmap">
 
 [![PyPI](https://img.shields.io/pypi/v/pitmap.svg)](https://pypi.org/project/pitmap/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lshpaner/pitmap/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/datasciencedynamics/pitmap/blob/main/LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 
 Surface construction from scattered survey points for open-pit mine surveying.
