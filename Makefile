@@ -20,7 +20,7 @@ create_venv:
 ## Install package in editable mode with dev extras
 requirements:
 	$(PYTHON_INTERPRETER) -m pip install --upgrade pip
-	$(PYTHON_INTERPRETER) -m pip install -e ".[dev]"
+	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
 #################################################################################
 # DATA                                                                          #
