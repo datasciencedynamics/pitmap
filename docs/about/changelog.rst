@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.0.0a6
+-------
+
+- ``SectorIDW.predict`` vectorised (4-10x faster, identical results).
+
 0.0.0a5
 -------
 
