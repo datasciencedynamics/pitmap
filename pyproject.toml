@@ -8,8 +8,7 @@ version = "0.0.0a4"
 description = "Surface construction from scattered survey points for open-pit mine surveying: polygonal, sector IDW, polynomial, NURBS and kernel interpolators, with prism volumes."
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
-license-files = ["LICENSE"]
+license = { text = "MIT" }
 authors = [{name = "Leonid Shpaner"}]
 keywords = ["mine surveying", "interpolation", "open-pit", "NURBS", "IDW", "surface modeling"]
 classifiers = [
