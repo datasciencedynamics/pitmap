@@ -10,7 +10,12 @@ real survey data from a Kryvyi Rih iron-ore quarry.
 
 The full notebook is in the repository:
 `notebooks/01_sector_idw_vs_nearest_region.ipynb
-<https://github.com/datasciencedynamics/pitmap/blob/main/notebooks/01_sector_idw_vs_nearest_region.ipynb>`_.
+<https://github.com/datasciencedynamics/pitmap/blob/main/notebooks/01_sector_idw_vs_nearest_region.ipynb>`_,
+or run it directly:
+
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/datasciencedynamics/pitmap/blob/main/notebooks/01_sector_idw_vs_nearest_region.ipynb
+   :alt: Open in Colab
 
 Setup
 -----
