@@ -1,4 +1,0 @@
-/* logo on the RTD sidebar: white background panel so the yellow reads on the dark sidebar */
-.wy-side-nav-search { background: #ffffff; }
-.wy-side-nav-search > a img.logo { width: 200px; }
-.wy-side-nav-search input[type=text] { border-color: #d3d1c7; }
