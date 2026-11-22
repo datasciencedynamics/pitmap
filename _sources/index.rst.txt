@@ -35,5 +35,6 @@ kernel-based interpolator added for comparison. Every interpolator shares one
    :maxdepth: 1
    :caption: About pitmap
 
+   about/contributors
    about/changelog
    about/references
