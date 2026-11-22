@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sector inverse distance weighting &mdash; pitmap 0.0.0a2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e01a7ecf" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=833d5294"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Interpolators" href="../api/interpolation.html" />
+    <link rel="prev" title="Polygonal (nearest region)" href="nearest_region.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#quick-example">Quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#interface">Interface</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nearest_region.html">Polygonal (nearest region)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sector inverse distance weighting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#anisotropy">Anisotropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classes, Attributes, &amp; Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/interpolation.html">Interpolators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/interpolation.html#pitmap.core.interpolation.NearestRegion"><code class="docutils literal notranslate"><span class="pre">NearestRegion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/interpolation.html#pitmap.core.interpolation.NearestRegion.fit"><code class="docutils literal notranslate"><span class="pre">NearestRegion.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/interpolation.html#pitmap.core.interpolation.NearestRegion.predict"><code class="docutils literal notranslate"><span class="pre">NearestRegion.predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/interpolation.html#pitmap.core.interpolation.SectorIDW"><code class="docutils literal notranslate"><span class="pre">SectorIDW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/interpolation.html#pitmap.core.interpolation.SectorIDW.fit"><code class="docutils literal notranslate"><span class="pre">SectorIDW.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/interpolation.html#pitmap.core.interpolation.SectorIDW.predict"><code class="docutils literal notranslate"><span class="pre">SectorIDW.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a2">0.0.0a2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a1">0.0.0a1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pitmap</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sector inverse distance weighting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/methods/sector_idw.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sector-inverse-distance-weighting">
+<h1>Sector inverse distance weighting<a class="headerlink" href="#sector-inverse-distance-weighting" title="Link to this heading"></a></h1>
+<p>The value at a location is a weighted average of nearby survey points, each
+weighted by the inverse of its distance raised to a power
+<span class="math notranslate nohighlight">\(\alpha\)</span> (Zelenskyi et al., 2020; Zelensky and Donchenko, 2025, eq. 11):</p>
+<div class="math notranslate nohighlight">
+\[Z_A = \frac{\sum_{i=1}^{N} Z_i\, d_i^{-\alpha}}{\sum_{i=1}^{N} d_i^{-\alpha}}\]</div>
+<p>Plain inverse distance weighting has a known weakness: a cluster of points on
+one side of the location dominates the average even though the cluster carries
+little extra information. The sector rule fixes this. A search circle of the
+given radius is divided into <code class="docutils literal notranslate"><span class="pre">n_sectors</span></code> equal angular sectors and only the
+single closest point in each sector is used, so at most <code class="docutils literal notranslate"><span class="pre">n_sectors</span></code> points
+contribute and no direction dominates. A location with no survey point inside
+the radius returns <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+<section id="anisotropy">
+<h2>Anisotropy<a class="headerlink" href="#anisotropy" title="Link to this heading"></a></h2>
+<p>The critical correlation radius <span class="math notranslate nohighlight">\(r_k\)</span> (the lag at which the spatial
+autocorrelation of the measured quantity dies out) can differ by direction,
+for example along versus across the strike of an ore body. Passing
+<code class="docutils literal notranslate"><span class="pre">anisotropy=(rk_x,</span> <span class="pre">rk_y)</span></code> scales distances by <span class="math notranslate nohighlight">\(r_{k,\max} / r_{k,i}\)</span>
+before weighting, so a point along the better-correlated axis counts as closer
+(Zelensky and Donchenko, 2025, eqs. 12-13).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pitmap</span><span class="w"> </span><span class="kn">import</span> <span class="n">SectorIDW</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SectorIDW</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_sectors</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">z_hat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">grid_xy</span><span class="p">)</span>
+
+<span class="c1"># along-strike correlation radius 40 m, across-strike 10 m</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SectorIDW</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">anisotropy</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">radius</span></code></dt><dd><p>Search radius, in the units of <code class="docutils literal notranslate"><span class="pre">xy</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">power</span></code></dt><dd><p>The exponent <span class="math notranslate nohighlight">\(\alpha\)</span>. 2 is the usual choice.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n_sectors</span></code></dt><dd><p>Number of angular sectors. 8 follows the original system. With 1 the method
+reduces to nearest neighbour.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anisotropy</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(rk_x,</span> <span class="pre">rk_y)</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> for isotropic distances.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nearest_region.html" class="btn btn-neutral float-left" title="Polygonal (nearest region)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../api/interpolation.html" class="btn btn-neutral float-right" title="Interpolators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Data Science Dynamics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

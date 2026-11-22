@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pitmap.core.interpolation &mdash; pitmap 0.0.0a2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=e01a7ecf" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.svg"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=833d5294"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#quick-example">Quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#interface">Interface</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/nearest_region.html">Polygonal (nearest region)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/sector_idw.html">Sector inverse distance weighting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/sector_idw.html#anisotropy">Anisotropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/sector_idw.html#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classes, Attributes, &amp; Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/interpolation.html">Interpolators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion"><code class="docutils literal notranslate"><span class="pre">NearestRegion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.fit"><code class="docutils literal notranslate"><span class="pre">NearestRegion.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.predict"><code class="docutils literal notranslate"><span class="pre">NearestRegion.predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW"><code class="docutils literal notranslate"><span class="pre">SectorIDW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.fit"><code class="docutils literal notranslate"><span class="pre">SectorIDW.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.predict"><code class="docutils literal notranslate"><span class="pre">SectorIDW.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a2">0.0.0a2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a1">0.0.0a1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pitmap</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pitmap.core.interpolation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pitmap.core.interpolation</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Interpolators that share one fit/predict interface.</span>
+
+<span class="sd">Each class takes survey points as an (n, 2) array of x, y coordinates and an</span>
+<span class="sd">(n,) array of elevations (or any indicator such as ore grade) z, and predicts</span>
+<span class="sd">z at new x, y locations.</span>
+
+<span class="sd">Methods follow the automated geological and mine-surveying support system</span>
+<span class="sd">described in Zelenskyi et al. (2020), Zelensky &amp; Lysenko (2023), and</span>
+<span class="sd">Zelensky &amp; Donchenko (2025).</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">NearestNDInterpolator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">cKDTree</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_xy_z</span><span class="p">(</span><span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xy</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">xy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"xy must have shape (n, 2)"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"z must have shape (n,)"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xy</span><span class="p">,</span> <span class="n">z</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_query</span><span class="p">(</span><span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xy</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">xy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"query xy must have shape (m, 2)"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xy</span>
+
+
+<div class="viewcode-block" id="NearestRegion">
+<a class="viewcode-back" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NearestRegion</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Polygonal (nearest-region / Thiessen polygon) surface.</span>
+
+<span class="sd">    Every location takes the elevation of its closest survey point, so the</span>
+<span class="sd">    surface is piecewise constant over the Voronoi cell of each point. This is</span>
+<span class="sd">    the classical polygonal method of mine surveying and reserve estimation</span>
+<span class="sd">    (Zelensky &amp; Lysenko, 2023, section 4).</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interp</span><span class="p">:</span> <span class="n">NearestNDInterpolator</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="NearestRegion.fit">
+<a class="viewcode-back" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.fit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"NearestRegion"</span><span class="p">:</span>
+        <span class="n">xy</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">_check_xy_z</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interp</span> <span class="o">=</span> <span class="n">NearestNDInterpolator</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="NearestRegion.predict">
+<a class="viewcode-back" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.predict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"call fit() before predict()"</span><span class="p">)</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="n">_check_query</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interp</span><span class="p">(</span><span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SectorIDW">
+<a class="viewcode-back" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SectorIDW</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Sector-constrained inverse distance weighting.</span>
+
+<span class="sd">    The value at a query point is a weighted average of nearby survey points,</span>
+<span class="sd">    with weight 1 / d**power (Zelenskyi et al., 2020; Zelensky &amp; Donchenko,</span>
+<span class="sd">    2025, eq. 11). To stop a cluster of points on one side from dominating,</span>
+<span class="sd">    the search circle of the given radius is cut into ``n_sectors`` equal</span>
+<span class="sd">    angular sectors and only the single closest point in each sector is used</span>
+<span class="sd">    (2020 paper, Fig. 3). Query points with no survey point inside the radius</span>
+<span class="sd">    return NaN.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    radius : float</span>
+<span class="sd">        Search radius in the units of xy.</span>
+<span class="sd">    power : float, default 2.0</span>
+<span class="sd">        Distance exponent alpha. 2 is the usual choice.</span>
+<span class="sd">    n_sectors : int, default 8</span>
+<span class="sd">        Number of angular sectors around each query point.</span>
+<span class="sd">    anisotropy : tuple[float, float] or None</span>
+<span class="sd">        Critical correlation radius along x and along y, (rk_x, rk_y). When</span>
+<span class="sd">        given, distances are scaled by rk_max / rk_axis before weighting so a</span>
+<span class="sd">        point along the better-correlated axis counts as closer (Zelensky &amp;</span>
+<span class="sd">        Donchenko, 2025, eq. 12-13). None means isotropic.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">power</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="n">n_sectors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">anisotropy</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">radius</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"radius must be positive"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n_sectors</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"n_sectors must be at least 1"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">anisotropy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rk_x</span><span class="p">,</span> <span class="n">rk_y</span> <span class="o">=</span> <span class="n">anisotropy</span>
+            <span class="k">if</span> <span class="n">rk_x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">rk_y</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"anisotropy radii must be positive"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">power</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_sectors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_sectors</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anisotropy</span> <span class="o">=</span> <span class="n">anisotropy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span><span class="p">:</span> <span class="n">cKDTree</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># scale factors that stretch the axis with the shorter correlation radius</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_axis_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anisotropy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">rk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">anisotropy</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rk</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="n">rk</span>
+
+<div class="viewcode-block" id="SectorIDW.fit">
+<a class="viewcode-back" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.fit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"SectorIDW"</span><span class="p">:</span>
+        <span class="n">xy</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">_check_xy_z</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span> <span class="o">=</span> <span class="n">xy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_z</span> <span class="o">=</span> <span class="n">z</span>
+        <span class="c1"># the tree is built on scaled coordinates so the radius search already</span>
+        <span class="c1"># respects anisotropy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span> <span class="o">=</span> <span class="n">cKDTree</span><span class="p">(</span><span class="n">xy</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axis_scale</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_predict_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axis_scale</span><span class="p">()</span>
+        <span class="n">q_scaled</span> <span class="o">=</span> <span class="n">q</span> <span class="o">*</span> <span class="n">scale</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">q_scaled</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+        <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale</span> <span class="o">-</span> <span class="n">q_scaled</span>  <span class="c1"># (k, 2) offsets, scaled</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">delta</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">delta</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+        <span class="c1"># a survey point sitting exactly on the query location wins outright</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">hit</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_z</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">hit</span><span class="p">[</span><span class="mi">0</span><span class="p">]]])</span>
+
+        <span class="c1"># assign each candidate to an angular sector and keep the closest per sector</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">delta</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">delta</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># (-pi, pi]</span>
+        <span class="n">sector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">angle</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_sectors</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">sector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">sector</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_sectors</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">keep</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">sector</span><span class="p">):</span>
+            <span class="n">members</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sector</span> <span class="o">==</span> <span class="n">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">keep</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">members</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">members</span><span class="p">])])</span>
+        <span class="n">keep_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">keep</span><span class="p">)</span>
+
+        <span class="n">w</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">keep_arr</span><span class="p">]</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_z</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">keep_arr</span><span class="p">]])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+<div class="viewcode-block" id="SectorIDW.predict">
+<a class="viewcode-back" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.predict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tree</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"call fit() before predict()"</span><span class="p">)</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="n">_check_query</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_predict_one</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">xy</span><span class="p">])</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Data Science Dynamics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
