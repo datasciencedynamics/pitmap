@@ -26,6 +26,12 @@ kernel-based interpolator added for comparison. Every interpolator shares one
    methods/sector_idw
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Examples
+
+   examples/sector_idw_synthetic
+
+.. toctree::
    :maxdepth: 2
    :caption: Classes, Attributes, & Methods
 
