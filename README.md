@@ -28,11 +28,13 @@ Documentation: https://datasciencedynamics.com/pitmap/
 | `NURBSSurface` | Tensor-product NURBS smoother over an interpolated grid | Zelensky & Lysenko (2023) |
 | `KernelSurface` | SVR / Gaussian process with the critical correlation radius as default length scale | this package |
 
-Utilities: `acf_radius()` (critical correlation radius from the spatial
-autocorrelation function) and `prism_volume()` (volume between surfaces by
-unit prisms).
+Utilities: `autocorrelation()`, `lag1_autocorrelation()` and
+`critical_radius()` (spatial autocorrelation function and the critical
+correlation radius) and `prism_volume()` (volume between surfaces by unit
+prisms). `pitmap.synthetic` generates a terraced test pit.
 
-Implemented so far: `NearestRegion`, `SectorIDW`.
+Implemented so far: `NearestRegion`, `SectorIDW`, `PolynomialSurface`,
+`select_degree`, the autocorrelation utilities.
 
 ## Install
 
