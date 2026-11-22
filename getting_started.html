@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started &mdash; pitmap 0.0.0a4 documentation</title>
+  <title>Getting Started &mdash; pitmap 0.0.0a5 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7e52a260" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/favicon.svg"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=eccc4640"></script>
+      <script src="_static/documentation_options.js?v=48b4c259"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -63,6 +63,15 @@
 <li class="toctree-l2"><a class="reference internal" href="methods/sector_idw.html#parameters">Parameters</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="methods/polynomial_surface.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods/polynomial_surface.html#adequacy">Adequacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methods/polynomial_surface.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="methods/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods/variability.html#critical-correlation-radius">Critical correlation radius</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul>
@@ -72,6 +81,12 @@
 <li class="toctree-l2"><a class="reference internal" href="examples/sector_idw_synthetic.html#error-vs-grid-step">Error vs grid step</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/sector_idw_synthetic.html#error-vs-number-of-survey-points">Error vs number of survey points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/sector_idw_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/polynomial_synthetic.html">Polynomial surface and adequacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/polynomial_synthetic.html#degree-sweep">Degree sweep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/polynomial_synthetic.html#surfaces">Surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/polynomial_synthetic.html#reference">Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -90,11 +105,31 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="api/polynomial.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.fit"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.predict"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.adequacy"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.adequacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.is_adequate"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.is_adequate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.select_degree"><code class="docutils literal notranslate"><span class="pre">select_degree()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/variability.html#pitmap.core.variability.autocorrelation"><code class="docutils literal notranslate"><span class="pre">autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/variability.html#pitmap.core.variability.lag1_autocorrelation"><code class="docutils literal notranslate"><span class="pre">lag1_autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/variability.html#pitmap.core.variability.critical_radius"><code class="docutils literal notranslate"><span class="pre">critical_radius()</span></code></a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about/contributors.html">Contributors/Maintainers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a5">0.0.0a5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a4">0.0.0a4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a3">0.0.0a3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a2">0.0.0a2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a1">0.0.0a1</a></li>
 </ul>

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; pitmap 0.0.0a4 documentation</title>
+  <title>Index &mdash; pitmap 0.0.0a5 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7e52a260" />
@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="_static/favicon.svg"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=eccc4640"></script>
+      <script src="_static/documentation_options.js?v=48b4c259"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -60,6 +60,15 @@
 <li class="toctree-l2"><a class="reference internal" href="methods/sector_idw.html#parameters">Parameters</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="methods/polynomial_surface.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods/polynomial_surface.html#adequacy">Adequacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methods/polynomial_surface.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="methods/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods/variability.html#critical-correlation-radius">Critical correlation radius</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul>
@@ -69,6 +78,12 @@
 <li class="toctree-l2"><a class="reference internal" href="examples/sector_idw_synthetic.html#error-vs-grid-step">Error vs grid step</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/sector_idw_synthetic.html#error-vs-number-of-survey-points">Error vs number of survey points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/sector_idw_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/polynomial_synthetic.html">Polynomial surface and adequacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/polynomial_synthetic.html#degree-sweep">Degree sweep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/polynomial_synthetic.html#surfaces">Surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/polynomial_synthetic.html#reference">Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -87,11 +102,31 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="api/polynomial.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.fit"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.predict"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.adequacy"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.adequacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.is_adequate"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.is_adequate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/polynomial.html#pitmap.core.polynomial.select_degree"><code class="docutils literal notranslate"><span class="pre">select_degree()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/variability.html#pitmap.core.variability.autocorrelation"><code class="docutils literal notranslate"><span class="pre">autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/variability.html#pitmap.core.variability.lag1_autocorrelation"><code class="docutils literal notranslate"><span class="pre">lag1_autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/variability.html#pitmap.core.variability.critical_radius"><code class="docutils literal notranslate"><span class="pre">critical_radius()</span></code></a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about/contributors.html">Contributors/Maintainers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a5">0.0.0a5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a4">0.0.0a4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a3">0.0.0a3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a2">0.0.0a2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about/changelog.html#a1">0.0.0a1</a></li>
 </ul>
@@ -126,13 +161,37 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#F"><strong>F</strong></a>
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#S"><strong>S</strong></a>
  
 </div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.adequacy">adequacy() (pitmap.core.polynomial.PolynomialSurface method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/variability.html#pitmap.core.variability.autocorrelation">autocorrelation() (in module pitmap.core.variability)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/variability.html#pitmap.core.variability.critical_radius">critical_radius() (in module pitmap.core.variability)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -141,7 +200,25 @@
       <ul>
         <li><a href="api/interpolation.html#pitmap.core.interpolation.SectorIDW.fit">(pitmap.core.interpolation.SectorIDW method)</a>
 </li>
+        <li><a href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.fit">(pitmap.core.polynomial.PolynomialSurface method)</a>
+</li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.is_adequate">is_adequate() (pitmap.core.polynomial.PolynomialSurface method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/variability.html#pitmap.core.variability.lag1_autocorrelation">lag1_autocorrelation() (in module pitmap.core.variability)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -153,6 +230,10 @@
 
       <ul>
         <li><a href="api/interpolation.html#module-pitmap.core.interpolation">pitmap.core.interpolation</a>
+</li>
+        <li><a href="api/polynomial.html#module-pitmap.core.polynomial">pitmap.core.polynomial</a>
+</li>
+        <li><a href="api/variability.html#module-pitmap.core.variability">pitmap.core.variability</a>
 </li>
       </ul></li>
   </ul></td>
@@ -176,12 +257,30 @@
         <li><a href="api/interpolation.html#module-pitmap.core.interpolation">module</a>
 </li>
       </ul></li>
+      <li>
+    pitmap.core.polynomial
+
+      <ul>
+        <li><a href="api/polynomial.html#module-pitmap.core.polynomial">module</a>
+</li>
+      </ul></li>
+      <li>
+    pitmap.core.variability
+
+      <ul>
+        <li><a href="api/variability.html#module-pitmap.core.variability">module</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface">PolynomialSurface (class in pitmap.core.polynomial)</a>
+</li>
       <li><a href="api/interpolation.html#pitmap.core.interpolation.NearestRegion.predict">predict() (pitmap.core.interpolation.NearestRegion method)</a>
 
       <ul>
         <li><a href="api/interpolation.html#pitmap.core.interpolation.SectorIDW.predict">(pitmap.core.interpolation.SectorIDW method)</a>
+</li>
+        <li><a href="api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.predict">(pitmap.core.polynomial.PolynomialSurface method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -191,6 +290,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/interpolation.html#pitmap.core.interpolation.SectorIDW">SectorIDW (class in pitmap.core.interpolation)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/polynomial.html#pitmap.core.polynomial.select_degree">select_degree() (in module pitmap.core.polynomial)</a>
 </li>
   </ul></td>
 </tr></table>

@@ -1,6 +1,25 @@
 Changelog
 =========
 
+0.0.0a5
+-------
+
+- ``PolynomialSurface`` with the 2025 adequacy indicators and ``select_degree``.
+- ``autocorrelation``, ``lag1_autocorrelation`` and ``critical_radius``.
+- ``pitmap.synthetic`` terraced-pit generator; example notebooks.
+- License metadata in table form so Python 3.8 installs work.
+
+0.0.0a4
+-------
+
+- ``src/`` layout; minimum Python lowered to 3.8.
+- Documentation at https://datasciencedynamics.com/pitmap/; acknowledgements and ``CITATION.cff``.
+
+0.0.0a3
+-------
+
+- Same content as a2 (tagged by mistake).
+
 0.0.0a2
 -------
 

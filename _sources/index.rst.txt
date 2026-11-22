@@ -24,18 +24,23 @@ kernel-based interpolator added for comparison. Every interpolator shares one
 
    methods/nearest_region
    methods/sector_idw
+   methods/polynomial_surface
+   methods/variability
 
 .. toctree::
    :maxdepth: 1
    :caption: Examples
 
    examples/sector_idw_synthetic
+   examples/polynomial_synthetic
 
 .. toctree::
    :maxdepth: 2
    :caption: Classes, Attributes, & Methods
 
    api/interpolation
+   api/polynomial
+   api/variability
 
 .. toctree::
    :maxdepth: 1

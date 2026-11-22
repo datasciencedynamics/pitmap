@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polynomial surface &mdash; pitmap 0.0.0a5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7e52a260" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=48b4c259"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Spatial variability" href="variability.html" />
+    <link rel="prev" title="Interpolators" href="interpolation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#quick-example">Quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#interface">Interface</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../methods/nearest_region.html">Polygonal (nearest region)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/sector_idw.html">Sector inverse distance weighting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/sector_idw.html#anisotropy">Anisotropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/sector_idw.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/polynomial_surface.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/polynomial_surface.html#adequacy">Adequacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/polynomial_surface.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/variability.html#critical-correlation-radius">Critical correlation radius</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/sector_idw_synthetic.html">Sector IDW vs nearest region</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/sector_idw_synthetic.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/sector_idw_synthetic.html#surfaces-on-a-30-m-grid">Surfaces on a 30 m grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/sector_idw_synthetic.html#error-vs-grid-step">Error vs grid step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/sector_idw_synthetic.html#error-vs-number-of-survey-points">Error vs number of survey points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/sector_idw_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/polynomial_synthetic.html">Polynomial surface and adequacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/polynomial_synthetic.html#degree-sweep">Degree sweep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/polynomial_synthetic.html#surfaces">Surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/polynomial_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classes, Attributes, &amp; Methods</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="interpolation.html">Interpolators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interpolation.html#pitmap.core.interpolation.NearestRegion"><code class="docutils literal notranslate"><span class="pre">NearestRegion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html#pitmap.core.interpolation.NearestRegion.fit"><code class="docutils literal notranslate"><span class="pre">NearestRegion.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html#pitmap.core.interpolation.NearestRegion.predict"><code class="docutils literal notranslate"><span class="pre">NearestRegion.predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interpolation.html#pitmap.core.interpolation.SectorIDW"><code class="docutils literal notranslate"><span class="pre">SectorIDW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html#pitmap.core.interpolation.SectorIDW.fit"><code class="docutils literal notranslate"><span class="pre">SectorIDW.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html#pitmap.core.interpolation.SectorIDW.predict"><code class="docutils literal notranslate"><span class="pre">SectorIDW.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface.fit"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface.predict"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface.adequacy"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.adequacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface.is_adequate"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.is_adequate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pitmap.core.polynomial.select_degree"><code class="docutils literal notranslate"><span class="pre">select_degree()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variability.html#pitmap.core.variability.autocorrelation"><code class="docutils literal notranslate"><span class="pre">autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="variability.html#pitmap.core.variability.lag1_autocorrelation"><code class="docutils literal notranslate"><span class="pre">lag1_autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="variability.html#pitmap.core.variability.critical_radius"><code class="docutils literal notranslate"><span class="pre">critical_radius()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributors.html">Contributors/Maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a5">0.0.0a5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a4">0.0.0a4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a3">0.0.0a3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a2">0.0.0a2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/changelog.html#a1">0.0.0a1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pitmap</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Polynomial surface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/polynomial.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pitmap.core.polynomial">
+<span id="polynomial-surface"></span><h1>Polynomial surface<a class="headerlink" href="#module-pitmap.core.polynomial" title="Link to this heading"></a></h1>
+<p>Polynomial surface by least squares with the adequacy checks of
+Zelensky &amp; Donchenko (2025).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pitmap.core.polynomial.PolynomialSurface">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pitmap.core.polynomial.</span></span><span class="sig-name descname"><span class="pre">PolynomialSurface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pitmap/core/polynomial.html#PolynomialSurface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pitmap.core.polynomial.PolynomialSurface" title="Link to this definition"></a></dt>
+<dd><p>Bivariate polynomial surface z = f(x, y) fitted by least squares.</p>
+<p>The surface is a sum of monomials <code class="docutils literal notranslate"><span class="pre">x**i</span> <span class="pre">*</span> <span class="pre">y**j</span></code> with <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">&lt;=</span> <span class="pre">degree</span></code>.
+Coordinates are centred and scaled internally so high degrees stay
+numerically stable; <code class="docutils literal notranslate"><span class="pre">coef_</span></code> is in those scaled units.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">fit</span></code> the three adequacy indicators of Zelensky &amp; Donchenko (2025)
+are available:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">r2_</span></code></dt><dd><p>Coefficient of determination. The paper reads 0.5 to 0.8 as
+satisfactory, above 0.8 as highly reliable, below 0.5 as ineffective.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">variance_ratio_</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(var(z)</span> <span class="pre">-</span> <span class="pre">var(fitted))</span> <span class="pre">/</span> <span class="pre">var(z)</span> <span class="pre">*</span> <span class="pre">100</span></code>, the percentage by which the
+surface’s variance departs from the data’s. The paper accepts
+differences under 20 percent; a polynomial that interpolates every point
+can have R2 = 1 and still fail this check by oscillating between points.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">lag1_autocorrelation_</span></code></dt><dd><p>r_1 of the input <code class="docutils literal notranslate"><span class="pre">z</span></code> in the order given. This describes the data,
+not the fit; the paper treats r_1 &gt; 0.7 as a trend worth modelling.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>degree</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>) – Polynomial degree, 0 to 5 in the original system. Higher degrees are
+allowed but rarely adequate.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pitmap.core.polynomial.PolynomialSurface.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pitmap/core/polynomial.html#PolynomialSurface.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pitmap.core.polynomial.PolynomialSurface.fit" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface" title="pitmap.core.polynomial.PolynomialSurface"><em>PolynomialSurface</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pitmap.core.polynomial.PolynomialSurface.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pitmap/core/polynomial.html#PolynomialSurface.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pitmap.core.polynomial.PolynomialSurface.predict" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>ndarray</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pitmap.core.polynomial.PolynomialSurface.adequacy">
+<span class="sig-name descname"><span class="pre">adequacy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pitmap/core/polynomial.html#PolynomialSurface.adequacy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pitmap.core.polynomial.PolynomialSurface.adequacy" title="Link to this definition"></a></dt>
+<dd><p>The three indicators as a dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pitmap.core.polynomial.PolynomialSurface.is_adequate">
+<span class="sig-name descname"><span class="pre">is_adequate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r2_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance_ratio_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pitmap/core/polynomial.html#PolynomialSurface.is_adequate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pitmap.core.polynomial.PolynomialSurface.is_adequate" title="Link to this definition"></a></dt>
+<dd><p>Whether the fit meets the paper’s thresholds on R2 and variance ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r2_min</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><em>float</em></a>)</p></li>
+<li><p><strong>variance_ratio_max</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><em>float</em></a>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pitmap.core.polynomial.select_degree">
+<span class="sig-prename descclassname"><span class="pre">pitmap.core.polynomial.</span></span><span class="sig-name descname"><span class="pre">select_degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">thresholds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pitmap/core/polynomial.html#select_degree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pitmap.core.polynomial.select_degree" title="Link to this definition"></a></dt>
+<dd><p>Fit degrees 0..max_degree and return the lowest adequate one.</p>
+<p>If no degree is adequate, returns the one with the highest R2 among those
+within the variance-ratio limit, or the highest-R2 fit overall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_degree</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><em>int</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#pitmap.core.polynomial.PolynomialSurface" title="pitmap.core.polynomial.PolynomialSurface"><em>PolynomialSurface</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interpolation.html" class="btn btn-neutral float-left" title="Interpolators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="variability.html" class="btn btn-neutral float-right" title="Spatial variability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Data Science Dynamics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

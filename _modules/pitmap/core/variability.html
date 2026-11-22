@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pitmap.core.variability &mdash; pitmap 0.0.0a5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7e52a260" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.svg"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=48b4c259"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#quick-example">Quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#interface">Interface</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/nearest_region.html">Polygonal (nearest region)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/sector_idw.html">Sector inverse distance weighting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/sector_idw.html#anisotropy">Anisotropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/sector_idw.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/polynomial_surface.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/polynomial_surface.html#adequacy">Adequacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/polynomial_surface.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/variability.html#critical-correlation-radius">Critical correlation radius</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html">Sector IDW vs nearest region</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#surfaces-on-a-30-m-grid">Surfaces on a 30 m grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#error-vs-grid-step">Error vs grid step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#error-vs-number-of-survey-points">Error vs number of survey points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/polynomial_synthetic.html">Polynomial surface and adequacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/polynomial_synthetic.html#degree-sweep">Degree sweep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/polynomial_synthetic.html#surfaces">Surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/polynomial_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classes, Attributes, &amp; Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/interpolation.html">Interpolators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion"><code class="docutils literal notranslate"><span class="pre">NearestRegion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.fit"><code class="docutils literal notranslate"><span class="pre">NearestRegion.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.predict"><code class="docutils literal notranslate"><span class="pre">NearestRegion.predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW"><code class="docutils literal notranslate"><span class="pre">SectorIDW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.fit"><code class="docutils literal notranslate"><span class="pre">SectorIDW.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.predict"><code class="docutils literal notranslate"><span class="pre">SectorIDW.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/polynomial.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.fit"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.predict"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.adequacy"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.adequacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.is_adequate"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.is_adequate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.select_degree"><code class="docutils literal notranslate"><span class="pre">select_degree()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/variability.html#pitmap.core.variability.autocorrelation"><code class="docutils literal notranslate"><span class="pre">autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/variability.html#pitmap.core.variability.lag1_autocorrelation"><code class="docutils literal notranslate"><span class="pre">lag1_autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/variability.html#pitmap.core.variability.critical_radius"><code class="docutils literal notranslate"><span class="pre">critical_radius()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/contributors.html">Contributors/Maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a5">0.0.0a5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a4">0.0.0a4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a3">0.0.0a3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a2">0.0.0a2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a1">0.0.0a1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pitmap</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pitmap.core.variability</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pitmap.core.variability</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Spatial variability of a sequence of control points.</span>
+
+<span class="sd">Autocorrelation function (ACF) and the critical correlation radius, as used</span>
+<span class="sd">in the automated geological and mine-surveying support system</span>
+<span class="sd">(Zelensky &amp; Lysenko, 2023; Zelensky &amp; Donchenko, 2025, eq. 10).</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+
+<div class="viewcode-block" id="autocorrelation">
+<a class="viewcode-back" href="../../../api/variability.html#pitmap.core.variability.autocorrelation">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">autocorrelation</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">max_lag</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Autocorrelation coefficients r_m for lags m = 0 .. max_lag.</span>
+
+<span class="sd">    r_m is the Pearson correlation between the first n - m values and the</span>
+<span class="sd">    sequence shifted by m. ``max_lag`` defaults to n // 4, the usual</span>
+<span class="sd">    recommendation. ``values`` must be in sequence order (for example along a</span>
+<span class="sd">    borehole or a survey line).</span>
+<span class="sd">    """</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"need at least 3 values"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">max_lag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">max_lag</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">max_lag</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"max_lag must be smaller than n - 1"</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">max_lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="p">:]</span>
+        <span class="n">sa</span><span class="p">,</span> <span class="n">sb</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="k">if</span> <span class="n">sa</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">sb</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">r</span></div>
+
+
+
+<div class="viewcode-block" id="lag1_autocorrelation">
+<a class="viewcode-back" href="../../../api/variability.html#pitmap.core.variability.lag1_autocorrelation">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lag1_autocorrelation</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""r_1, the autocorrelation between adjacent control points.</span>
+
+<span class="sd">    Zelensky &amp; Donchenko (2025) treat r_1 &gt; 0.7 as a consistent spatial trend</span>
+<span class="sd">    worth modelling and r_1 &lt;= 0.7 as a set of effectively random values.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">autocorrelation</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">max_lag</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="critical_radius">
+<a class="viewcode-back" href="../../../api/variability.html#pitmap.core.variability.critical_radius">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">critical_radius</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">max_lag</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Critical correlation radius r_k.</span>
+
+<span class="sd">    Distance at which the ACF first crosses zero, found by linear</span>
+<span class="sd">    interpolation between the last positive and first non-positive</span>
+<span class="sd">    coefficient, multiplied by ``step`` (the spacing between control points).</span>
+<span class="sd">    Returns ``inf`` if the ACF stays positive over all computed lags.</span>
+<span class="sd">    """</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">autocorrelation</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">max_lag</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">frac</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">r</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="k">else</span> <span class="mf">0.0</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(((</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">frac</span><span class="p">)</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"inf"</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Data Science Dynamics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

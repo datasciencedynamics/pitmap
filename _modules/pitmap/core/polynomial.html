@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pitmap.core.polynomial &mdash; pitmap 0.0.0a5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7e52a260" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.svg"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=48b4c259"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#quick-example">Quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started.html#interface">Interface</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/nearest_region.html">Polygonal (nearest region)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/sector_idw.html">Sector inverse distance weighting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/sector_idw.html#anisotropy">Anisotropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/sector_idw.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/polynomial_surface.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/polynomial_surface.html#adequacy">Adequacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/polynomial_surface.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../methods/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../methods/variability.html#critical-correlation-radius">Critical correlation radius</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html">Sector IDW vs nearest region</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#surfaces-on-a-30-m-grid">Surfaces on a 30 m grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#error-vs-grid-step">Error vs grid step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#error-vs-number-of-survey-points">Error vs number of survey points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/sector_idw_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/polynomial_synthetic.html">Polynomial surface and adequacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/polynomial_synthetic.html#degree-sweep">Degree sweep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/polynomial_synthetic.html#surfaces">Surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/polynomial_synthetic.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classes, Attributes, &amp; Methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/interpolation.html">Interpolators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion"><code class="docutils literal notranslate"><span class="pre">NearestRegion</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.fit"><code class="docutils literal notranslate"><span class="pre">NearestRegion.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.NearestRegion.predict"><code class="docutils literal notranslate"><span class="pre">NearestRegion.predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW"><code class="docutils literal notranslate"><span class="pre">SectorIDW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.fit"><code class="docutils literal notranslate"><span class="pre">SectorIDW.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/interpolation.html#pitmap.core.interpolation.SectorIDW.predict"><code class="docutils literal notranslate"><span class="pre">SectorIDW.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/polynomial.html">Polynomial surface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.fit"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.predict"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.adequacy"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.adequacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.is_adequate"><code class="docutils literal notranslate"><span class="pre">PolynomialSurface.is_adequate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/polynomial.html#pitmap.core.polynomial.select_degree"><code class="docutils literal notranslate"><span class="pre">select_degree()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/variability.html">Spatial variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/variability.html#pitmap.core.variability.autocorrelation"><code class="docutils literal notranslate"><span class="pre">autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/variability.html#pitmap.core.variability.lag1_autocorrelation"><code class="docutils literal notranslate"><span class="pre">lag1_autocorrelation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/variability.html#pitmap.core.variability.critical_radius"><code class="docutils literal notranslate"><span class="pre">critical_radius()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About pitmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/contributors.html">Contributors/Maintainers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a5">0.0.0a5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a4">0.0.0a4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a3">0.0.0a3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a2">0.0.0a2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/changelog.html#a1">0.0.0a1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pitmap</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pitmap.core.polynomial</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pitmap.core.polynomial</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Polynomial surface by least squares with the adequacy checks of</span>
+<span class="sd">Zelensky &amp; Donchenko (2025)."""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pitmap.core.interpolation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_check_query</span><span class="p">,</span> <span class="n">_check_xy_z</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pitmap.core.variability</span><span class="w"> </span><span class="kn">import</span> <span class="n">lag1_autocorrelation</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_monomial_powers</span><span class="p">(</span><span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degree</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="n">d</span> <span class="o">-</span> <span class="n">i</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<div class="viewcode-block" id="PolynomialSurface">
+<a class="viewcode-back" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolynomialSurface</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Bivariate polynomial surface z = f(x, y) fitted by least squares.</span>
+
+<span class="sd">    The surface is a sum of monomials ``x**i * y**j`` with ``i + j &lt;= degree``.</span>
+<span class="sd">    Coordinates are centred and scaled internally so high degrees stay</span>
+<span class="sd">    numerically stable; ``coef_`` is in those scaled units.</span>
+
+<span class="sd">    After ``fit`` the three adequacy indicators of Zelensky &amp; Donchenko (2025)</span>
+<span class="sd">    are available:</span>
+
+<span class="sd">    ``r2_``</span>
+<span class="sd">        Coefficient of determination. The paper reads 0.5 to 0.8 as</span>
+<span class="sd">        satisfactory, above 0.8 as highly reliable, below 0.5 as ineffective.</span>
+<span class="sd">    ``variance_ratio_``</span>
+<span class="sd">        ``(var(z) - var(fitted)) / var(z) * 100``, the percentage by which the</span>
+<span class="sd">        surface's variance departs from the data's. The paper accepts</span>
+<span class="sd">        differences under 20 percent; a polynomial that interpolates every point</span>
+<span class="sd">        can have R2 = 1 and still fail this check by oscillating between points.</span>
+<span class="sd">    ``lag1_autocorrelation_``</span>
+<span class="sd">        r_1 of the input ``z`` in the order given. This describes the data,</span>
+<span class="sd">        not the fit; the paper treats r_1 &gt; 0.7 as a trend worth modelling.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    degree</span>
+<span class="sd">        Polynomial degree, 0 to 5 in the original system. Higher degrees are</span>
+<span class="sd">        allowed but rarely adequate.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">degree</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"degree must be &gt;= 0"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">degree</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_design</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">xy</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_center</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">u</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="n">i</span> <span class="o">*</span> <span class="n">u</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_powers</span><span class="p">])</span>
+
+<div class="viewcode-block" id="PolynomialSurface.fit">
+<a class="viewcode-back" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.fit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"PolynomialSurface"</span><span class="p">:</span>
+        <span class="n">xy</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">_check_xy_z</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_powers</span> <span class="o">=</span> <span class="n">_monomial_powers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_powers</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"degree </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">degree</span><span class="si">}</span><span class="s2"> needs at least </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_powers</span><span class="p">)</span><span class="si">}</span><span class="s2"> points"</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_center</span> <span class="o">=</span> <span class="n">xy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="mf">1e-12</span><span class="p">)</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_design</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">fitted</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef_</span>
+        <span class="n">ss_res</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">z</span> <span class="o">-</span> <span class="n">fitted</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">ss_tot</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">z</span> <span class="o">-</span> <span class="n">z</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2_</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">ss_res</span> <span class="o">/</span> <span class="n">ss_tot</span> <span class="k">if</span> <span class="n">ss_tot</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1.0</span>
+        <span class="n">var_z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="n">var_f</span> <span class="o">=</span> <span class="n">fitted</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variance_ratio_</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_z</span> <span class="o">-</span> <span class="n">var_f</span><span class="p">)</span> <span class="o">/</span> <span class="n">var_z</span> <span class="o">*</span> <span class="mf">100.0</span> <span class="k">if</span> <span class="n">var_z</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lag1_autocorrelation_</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">lag1_autocorrelation</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"nan"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="PolynomialSurface.predict">
+<a class="viewcode-back" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.predict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="n">_check_query</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_design</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef_</span></div>
+
+
+<div class="viewcode-block" id="PolynomialSurface.adequacy">
+<a class="viewcode-back" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.adequacy">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">adequacy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The three indicators as a dict."""</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"r2"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">r2_</span><span class="p">,</span>
+            <span class="s2">"variance_ratio"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">variance_ratio_</span><span class="p">,</span>
+            <span class="s2">"lag1_autocorrelation"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">lag1_autocorrelation_</span><span class="p">,</span>
+        <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="PolynomialSurface.is_adequate">
+<a class="viewcode-back" href="../../../api/polynomial.html#pitmap.core.polynomial.PolynomialSurface.is_adequate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_adequate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">r2_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">variance_ratio_max</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">20.0</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether the fit meets the paper's thresholds on R2 and variance ratio."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">r2_</span> <span class="o">&gt;=</span> <span class="n">r2_min</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">variance_ratio_</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">variance_ratio_max</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="select_degree">
+<a class="viewcode-back" href="../../../api/polynomial.html#pitmap.core.polynomial.select_degree">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">select_degree</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">max_degree</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="o">**</span><span class="n">thresholds</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PolynomialSurface</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Fit degrees 0..max_degree and return the lowest adequate one.</span>
+
+<span class="sd">    If no degree is adequate, returns the one with the highest R2 among those</span>
+<span class="sd">    within the variance-ratio limit, or the highest-R2 fit overall.</span>
+<span class="sd">    """</span>
+    <span class="n">fits</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_degree</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PolynomialSurface</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">fits</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">is_adequate</span><span class="p">(</span><span class="o">**</span><span class="n">thresholds</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">m</span>
+    <span class="n">vmax</span> <span class="o">=</span> <span class="n">thresholds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"variance_ratio_max"</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">fits</span> <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">variance_ratio_</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">vmax</span><span class="p">]</span> <span class="ow">or</span> <span class="n">fits</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">ok</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">r2_</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Data Science Dynamics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
