@@ -1,4 +1,5 @@
-/* logo on the RTD sidebar: white background panel so the yellow reads on the dark sidebar */
-.wy-side-nav-search { background: #ffffff; }
-.wy-side-nav-search > a img.logo { width: 200px; }
+/* logo on the RTD sidebar: white panel so the yellow reads, sized nearly edge to edge */
+.wy-side-nav-search { background: #ffffff; padding: 10px 8px 6px; }
+.wy-side-nav-search > a { padding: 0; margin: 0; }
+.wy-side-nav-search > a img.logo { width: 100%; max-width: 270px; margin: 0 auto; }
 .wy-side-nav-search input[type=text] { border-color: #d3d1c7; }
