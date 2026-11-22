@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="pitmap">
+  <title>pitmap</title>
+  <!-- open-pit benches in oblique view, survey points on the rim, interpolated mesh across -->
+  <g transform="translate(120,118)">
+    <ellipse cx="0" cy="0" rx="104" ry="62" fill="none" stroke="#0057B7" stroke-width="7"/>
+    <ellipse cx="0" cy="5" rx="80" ry="46" fill="none" stroke="#0057B7" stroke-width="9.5"/>
+    <ellipse cx="0" cy="5" rx="80" ry="46" fill="none" stroke="#FFD500" stroke-width="6.5"/>
+    <ellipse cx="0" cy="10" rx="56" ry="31" fill="none" stroke="#0057B7" stroke-width="7"/>
+    <ellipse cx="0" cy="15" rx="32" ry="16" fill="none" stroke="#0057B7" stroke-width="9.5"/>
+    <ellipse cx="0" cy="15" rx="32" ry="16" fill="none" stroke="#FFD500" stroke-width="6.5"/>
+    <ellipse cx="0" cy="19" rx="11" ry="5.5" fill="#0057B7"/>
+    <g fill="none" opacity="0.8">
+      <g stroke="#0057B7" stroke-width="4.5">
+        <path d="M-90 -24 Q0 28 94 -18"/>
+        <path d="M-54 -56 Q0 42 0 62"/>
+        <path d="M54 -56 Q0 42 0 62"/>
+      </g>
+      <g stroke="#FFD500" stroke-width="2">
+        <path d="M-90 -24 Q0 28 94 -18"/>
+        <path d="M-54 -56 Q0 42 0 62"/>
+        <path d="M54 -56 Q0 42 0 62"/>
+      </g>
+    </g>
+    <g fill="#FFD500" stroke="#0057B7" stroke-width="2.2">
+      <circle cx="-90" cy="-24" r="6"/>
+      <circle cx="-54" cy="-56" r="6"/>
+      <circle cx="54" cy="-56" r="6"/>
+      <circle cx="94" cy="-18" r="6"/>
+      <circle cx="0" cy="62" r="6"/>
+    </g>
+  </g>
+</svg>
