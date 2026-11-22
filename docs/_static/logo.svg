@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" width="560" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 170" width="560" height="170">
   <defs>
-    <style>@media (prefers-color-scheme: dark) { .tag { fill: #FFD500; } }</style>
     <linearGradient id="ore" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#FFD500"/>
       <stop offset="1" stop-color="#E6B800"/>
     </linearGradient>
   </defs>
-
-  <!-- open-pit benches: nested terraces seen in oblique view -->
-  <g transform="translate(20,20)">
+  <!-- open-pit benches in oblique view, survey points on the rim, interpolated mesh across -->
+  <g transform="translate(8,10)">
     <ellipse cx="80" cy="80" rx="78" ry="46" fill="none" stroke="#0057B7" stroke-width="5"/>
     <ellipse cx="80" cy="84" rx="60" ry="34" fill="none" stroke="#0057B7" stroke-width="8"/>
     <ellipse cx="80" cy="84" rx="60" ry="34" fill="none" stroke="url(#ore)" stroke-width="5"/>
@@ -16,33 +14,20 @@
     <ellipse cx="80" cy="92" rx="24" ry="12" fill="none" stroke="#0057B7" stroke-width="8"/>
     <ellipse cx="80" cy="92" rx="24" ry="12" fill="none" stroke="url(#ore)" stroke-width="5"/>
     <ellipse cx="80" cy="95" rx="8" ry="4" fill="#0057B7"/>
-
-    <!-- survey points on the rim -->
-    <g fill="#FFD500" stroke="#0057B7" stroke-width="1.6">
-      <circle cx="12" cy="62" r="4"/>
-      <circle cx="40" cy="38" r="4"/>
-      <circle cx="120" cy="38" r="4"/>
-      <circle cx="150" cy="66" r="4"/>
-      <circle cx="80" cy="126" r="4"/>
-    </g>
-    <!-- interpolated surface mesh lines across the pit -->
     <g fill="none" opacity="0.75">
       <g stroke="#0057B7" stroke-width="3.2">
-        <path d="M12 62 Q80 100 150 66"/>
-        <path d="M40 38 Q80 110 80 126"/>
-        <path d="M120 38 Q80 110 80 126"/>
+        <path d="M12 62 Q80 100 150 66"/><path d="M40 38 Q80 110 80 126"/><path d="M120 38 Q80 110 80 126"/>
       </g>
       <g stroke="#FFD500" stroke-width="1.5">
-        <path d="M12 62 Q80 100 150 66"/>
-        <path d="M40 38 Q80 110 80 126"/>
-        <path d="M120 38 Q80 110 80 126"/>
+        <path d="M12 62 Q80 100 150 66"/><path d="M40 38 Q80 110 80 126"/><path d="M120 38 Q80 110 80 126"/>
       </g>
     </g>
+    <g fill="#FFD500" stroke="#0057B7" stroke-width="1.6">
+      <circle cx="12" cy="62" r="4"/><circle cx="40" cy="38" r="4"/><circle cx="120" cy="38" r="4"/>
+      <circle cx="150" cy="66" r="4"/><circle cx="80" cy="126" r="4"/>
+    </g>
   </g>
-
-  <!-- wordmark -->
-  <!-- both lines forced to the same rendered width so they align regardless of font -->
-  <text x="200" y="98" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#0057B7" stroke="#FFD500" stroke-width="2.2" stroke-linejoin="round" paint-order="stroke fill" textLength="92" lengthAdjust="spacingAndGlyphs">pit</text>
-  <text x="292" y="98" font-family="Inter, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#FFD500" stroke="#0057B7" stroke-width="3.4" stroke-linejoin="round" paint-order="stroke fill" textLength="148" lengthAdjust="spacingAndGlyphs">map</text>
-  <text x="200" y="136" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" class="tag" fill="#0057B7" textLength="240" lengthAdjust="spacing">SURFACES FROM SURVEY POINTS</text>
+  <!-- wordmark only: pit (blue, yellow edge) + map (yellow, blue edge) -->
+  <text x="188" y="128" font-family="Inter, Helvetica, Arial, sans-serif" font-size="118" font-weight="700" fill="#0057B7" stroke="#FFD500" stroke-width="2.4" stroke-linejoin="round" paint-order="stroke fill" textLength="150" lengthAdjust="spacingAndGlyphs">pit</text>
+  <text x="338" y="128" font-family="Inter, Helvetica, Arial, sans-serif" font-size="118" font-weight="700" fill="#FFD500" stroke="#0057B7" stroke-width="3.8" stroke-linejoin="round" paint-order="stroke fill" textLength="212" lengthAdjust="spacingAndGlyphs">map</text>
 </svg>
