@@ -44,7 +44,7 @@ test:
 
 ## Format with black
 format:
-	$(PYTHON_INTERPRETER) -m black pitmap tests *.py
+	$(PYTHON_INTERPRETER) -m black src tests *.py
 
 ## Strip notebook outputs before committing
 strip_notebooks:

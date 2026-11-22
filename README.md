@@ -2,7 +2,8 @@
 
 [![PyPI](https://img.shields.io/pypi/v/pitmap.svg)](https://pypi.org/project/pitmap/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/datasciencedynamics/pitmap/blob/main/LICENSE)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+[![Docs](https://img.shields.io/badge/docs-datasciencedynamics.com%2Fpitmap-0057B7.svg)](https://datasciencedynamics.com/pitmap/)
 
 Surface construction from scattered survey points for open-pit mine surveying.
 
@@ -14,6 +15,8 @@ kernel-based interpolator added for comparison. All methods share one
 
 > **Status:** pre-alpha. The API will change. Nothing here is ready for
 > production use yet.
+
+Documentation: https://datasciencedynamics.com/pitmap/
 
 ## Methods
 
@@ -54,7 +57,7 @@ model.predict(np.array([[2.0, 1.0], [9.0, 9.0]]))
 ## Repository layout
 
 ```
-pitmap/          package; core/ holds the interpolators
+src/pitmap/      package; core/ holds the interpolators
 data_gen.py          fetch a raw DEM tile -> data/raw (Parquet, optional CSV)
 preprocessing.py     subsample to sparse survey points -> data/processed
 notebooks/           analysis; outputs stripped before commit
@@ -70,6 +73,17 @@ make requirements
 make test
 make help            # list all targets
 ```
+
+## Acknowledgements
+
+The surface-construction methods implemented here were developed by
+Prof. Oleksandr Zelenskyi, Volodymyr Lysenko and Oleksii Donchenko of the
+Department of Informatics and Applied Software, State University of Economics
+and Technology (Kryvyi Rih, Ukraine), over many years of work on automated
+geological and mine-surveying support for open-pit mining. This package is an
+independent open-source implementation of the methods as described in their
+published papers (below); it contains none of their source code. Any errors in
+the implementation are the package author's alone.
 
 ## References
 

@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use pitmap, please cite it as below, and cite the method papers listed in references."
+title: "pitmap: surface construction from scattered survey points for open-pit mine surveying"
+type: software
+version: 0.0.0a4
+date-released: 2026-11-22
+license: MIT
+repository-code: "https://github.com/datasciencedynamics/pitmap"
+url: "https://datasciencedynamics.com/pitmap/"
+authors:
+  - family-names: Shpaner
+    given-names: Leonid
+    affiliation: Data Science Dynamics
+references:
+  - type: article
+    title: "Modeling of the earth's surface subsidence during its undermining by stoping in coal mines"
+    authors:
+      - family-names: Zelenskyi
+        given-names: O.
+      - family-names: Lysenko
+        given-names: V.
+      - family-names: Alekseyev
+        given-names: M.
+      - family-names: Vlasov
+        given-names: V.
+    journal: "Naukovyi Visnyk Natsionalnoho Hirnychoho Universytetu"
+    year: 2020
+    issue: 6
+    start: 121
+    end: 127
+    doi: 10.33271/nvngu/2020-6/121
+  - type: article
+    title: "Construction surface using desktop and mobile applications"
+    authors:
+      - family-names: Zelensky
+        given-names: O.
+      - family-names: Lysenko
+        given-names: V.
+    journal: "Economics and Technical Engineering"
+    year: 2023
+    volume: 1
+    issue: 1
+    start: 87
+    end: 102
+    doi: 10.62911/ete.2023.01.01.07
+  - type: article
+    title: "Research and application of polynomial models in the development of an automated geological and mine surveying support system for open-pit mining"
+    authors:
+      - family-names: Zelensky
+        given-names: O.
+      - family-names: Donchenko
+        given-names: O.
+    journal: "Mining Journal of Kryvyi Rih National University"
+    year: 2025
+    volume: 59
+    issue: 1
+    start: 10
+    end: 21
+    doi: 10.31721/2306-5435-2025-1-10-21

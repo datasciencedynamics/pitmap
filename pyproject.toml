@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pitmap"
-version = "0.0.0a3"
+version = "0.0.0a4"
 description = "Surface construction from scattered survey points for open-pit mine surveying: polygonal, sector IDW, polynomial, NURBS and kernel interpolators, with prism volumes."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{name = "Leonid Shpaner"}]
@@ -19,13 +19,14 @@ classifiers = [
     "Topic :: Scientific/Engineering",
 ]
 dependencies = [
-    "numpy>=1.24",
-    "scipy>=1.11",
+    "numpy>=1.20",
+    "scipy>=1.7",
 ]
 
 [project.urls]
 Homepage = "https://github.com/datasciencedynamics/pitmap"
 Repository = "https://github.com/datasciencedynamics/pitmap"
+Documentation = "https://datasciencedynamics.com/pitmap/"
 
 [project.optional-dependencies]
 kernel = ["scikit-learn>=1.3"]
@@ -35,7 +36,7 @@ viz = ["matplotlib>=3.7"]
 dev = ["pytest", "black", "nbstripout", "jupyter", "build", "twine"]
 
 [tool.setuptools.packages.find]
-include = ["pitmap*"]
+where = ["src"]
 
 [tool.black]
 line-length = 88
