@@ -34,7 +34,7 @@ def test_sector_rule_limits_cluster_influence():
     xy = np.vstack([north, south])
     z = np.concatenate([np.full(9, 100.0), [0.0]])
 
-    plain = SectorIDW(radius=10, n_sectors=1).fit(xy, z)       # effectively plain IDW
+    plain = SectorIDW(radius=10, n_sectors=1).fit(xy, z)  # effectively plain IDW
     sectored = SectorIDW(radius=10, n_sectors=8).fit(xy, z)
     q = np.array([[0.0, 0.0]])
 
@@ -53,3 +53,15 @@ def test_anisotropy_favours_long_axis():
     assert iso.predict(q)[0] == pytest.approx(50.0)
     # the east point lies along the long axis so it should pull the estimate down
     assert aniso.predict(q)[0] < 50.0
+
+
+def test_batch_matches_per_node():
+    from pitmap.synthetic import grid, sample_survey_points
+
+    xy, z = sample_survey_points(300, seed=3)
+    _, _, nodes = grid(60.0)
+    for aniso in (None, (40.0, 10.0)):
+        m = SectorIDW(radius=200.0, power=2.0, n_sectors=8, anisotropy=aniso).fit(xy, z)
+        fast = m.predict(nodes)
+        slow = np.array([m._predict_one(q) for q in nodes])
+        assert np.allclose(fast, slow, equal_nan=True)

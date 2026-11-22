@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use pitmap, please cite it as below, and cite the method papers listed in references."
 title: "pitmap: surface construction from scattered survey points for open-pit mine surveying"
 type: software
-version: 0.0.0a5
+version: 0.0.0a6
 date-released: 2026-11-22
 license: MIT
 repository-code: "https://github.com/datasciencedynamics/pitmap"

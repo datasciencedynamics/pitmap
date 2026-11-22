@@ -153,8 +153,70 @@ class SectorIDW:
         w = d[keep_arr] ** (-self.power)
         return float(np.sum(w * self._z[idx[keep_arr]]) / np.sum(w))
 
+    def _predict_batch(self, xy: np.ndarray, k: int) -> tuple[np.ndarray, np.ndarray]:
+        """Vectorised prediction using the k nearest candidates per node.
+
+        Returns (values, exact) where ``exact`` is False for nodes that had
+        more than k points within the radius; those are redone by the exact
+        per-node routine since a closer point in some sector may have been
+        cut off.
+        """
+        assert self._tree is not None and self._xy is not None and self._z is not None
+        scale = self._axis_scale()
+        q_scaled = xy * scale
+        d, idx = self._tree.query(q_scaled, k=k, distance_upper_bound=self.radius)
+        d = np.atleast_2d(d)
+        idx = np.atleast_2d(idx)
+        valid = np.isfinite(d)
+        exact = ~valid[:, -1]  # k-th neighbour outside the radius: nothing was cut off
+        idx_safe = np.where(valid, idx, 0)
+
+        delta = self._xy[idx_safe] * scale - q_scaled[:, None, :]
+        angle = np.arctan2(delta[..., 1], delta[..., 0])
+        sector = np.floor((angle + np.pi) / (2.0 * np.pi / self.n_sectors)).astype(int)
+        sector = np.clip(sector, 0, self.n_sectors - 1)
+
+        d_inf = np.where(valid, d, np.inf)
+        out = np.full(xy.shape[0], np.nan)
+        num = np.zeros(xy.shape[0])
+        den = np.zeros(xy.shape[0])
+        for s in range(self.n_sectors):
+            d_s = np.where(sector == s, d_inf, np.inf)
+            j = np.argmin(d_s, axis=1)
+            rows = np.arange(xy.shape[0])
+            d_best = d_s[rows, j]
+            has = np.isfinite(d_best)
+            w = np.zeros_like(d_best)
+            with np.errstate(divide="ignore"):
+                w[has] = d_best[has] ** (-self.power)
+            num[has] += w[has] * self._z[idx_safe[rows[has], j[has]]]
+            den[has] += w[has]
+        covered = den > 0
+        out[covered] = num[covered] / den[covered]
+
+        # a survey point exactly on the node wins outright
+        hit_rows, hit_cols = np.where(valid & (d == 0.0))
+        if hit_rows.size:
+            first = np.unique(hit_rows, return_index=True)[1]
+            out[hit_rows[first]] = self._z[idx_safe[hit_rows[first], hit_cols[first]]]
+        return out, exact
+
     def predict(self, xy: np.ndarray) -> np.ndarray:
         if self._tree is None:
             raise RuntimeError("call fit() before predict()")
+        assert self._xy is not None
         xy = _check_query(xy)
-        return np.array([self._predict_one(q) for q in xy])
+        if xy.shape[0] == 0:
+            return np.empty(0)
+        n = self._xy.shape[0]
+        k = int(min(n, max(4 * self.n_sectors, 32)))
+        out, exact = self._predict_batch(xy, k)
+        # nodes with more than k candidates inside the radius: widen k and redo
+        # only those, until every node is exact or k covers all points
+        pending = np.where(~exact)[0]
+        while pending.size and k < n:
+            k = int(min(n, k * 4))
+            vals, exact = self._predict_batch(xy[pending], k)
+            out[pending] = vals
+            pending = pending[~exact]
+        return out

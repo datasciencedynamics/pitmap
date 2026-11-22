@@ -17,4 +17,4 @@ __all__ = [
     "lag1_autocorrelation",
     "critical_radius",
 ]
-__version__ = "0.0.0a5"
+__version__ = "0.0.0a6"

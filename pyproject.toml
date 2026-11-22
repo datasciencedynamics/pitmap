@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pitmap"
-version = "0.0.0a5"
+version = "0.0.0a6"
 description = "Surface construction from scattered survey points for open-pit mine surveying: polygonal, sector IDW, polynomial, NURBS and kernel interpolators, with prism volumes."
 readme = "README.md"
 requires-python = ">=3.8"
