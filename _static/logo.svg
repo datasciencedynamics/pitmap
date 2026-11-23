@@ -28,6 +28,6 @@
     </g>
   </g>
   <!-- wordmark only: pit (blue, yellow edge) + map (yellow, blue edge) -->
-  <text x="188" y="128" font-family="Inter, Helvetica, Arial, sans-serif" font-size="118" font-weight="700" fill="#0057B7" stroke="#FFD500" stroke-width="2.4" stroke-linejoin="round" paint-order="stroke fill" textLength="150" lengthAdjust="spacingAndGlyphs">pit</text>
-  <text x="338" y="128" font-family="Inter, Helvetica, Arial, sans-serif" font-size="118" font-weight="700" fill="#FFD500" stroke="#0057B7" stroke-width="3.8" stroke-linejoin="round" paint-order="stroke fill" textLength="212" lengthAdjust="spacingAndGlyphs">map</text>
+  <text x="188" y="128" font-family="Inter, Helvetica, Arial, sans-serif" font-size="118" font-weight="700" fill="#0057B7" stroke="#FFD500" stroke-width="6" stroke-linejoin="round" paint-order="stroke fill" textLength="150" lengthAdjust="spacingAndGlyphs">pit</text>
+  <text x="338" y="128" font-family="Inter, Helvetica, Arial, sans-serif" font-size="118" font-weight="700" fill="#FFD500" stroke="#0057B7" stroke-width="6" stroke-linejoin="round" paint-order="stroke fill" textLength="212" lengthAdjust="spacingAndGlyphs">map</text>
 </svg>
